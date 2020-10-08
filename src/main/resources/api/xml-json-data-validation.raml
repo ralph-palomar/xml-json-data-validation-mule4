@@ -1,0 +1,26 @@
+#%RAML 1.0
+title: Validating XML and JSON payloads using a Schema
+description: This sample Mule project makes use of XML and JSON validation module to validate the integrity of payload structure.
+version: v1
+
+/validation:
+  /xml:
+    post:
+      description: This endpoint validates an XML payload against an XML Schema.
+      body:
+        application/xml:
+          example: !include examples/sample.xml
+      responses:
+        200:
+          body:
+            application/xml:
+  /json:
+    post:
+      description: This endpoint validates a JSON payload against a JSON Schema.
+      body:
+        application/json:
+          example: !include examples/sample.json
+      responses:
+        200:
+          body:
+            application/json:
